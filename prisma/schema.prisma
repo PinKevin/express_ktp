@@ -33,25 +33,52 @@ model User {
     password  String
     role      Role
     mahasiswa Mahasiswa?
+    dosen    Dosen?
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
 
 model Mahasiswa {
-    nim        String   @id @default(cuid())
+    nim        String   @id @unique
     nama       String
     alamat     String
     no_telp    String
     email      String
     jalur_masuk Jalur_Masuk
     status     Status
-    sks_kumulatif Int
-    ipk_kumulatif Float
-    semester Int
     user_id    String   @unique
     user       User     @relation(fields: [user_id], references: [id])
+    dosenId   String
+    dosen    Dosen    @relation(fields: [dosenId], references: [nip])
+    irs IRS[]
     createdAt  DateTime @default(now())
     updatedAt  DateTime @updatedAt
+}
+
+model Dosen {
+    nip        String   @id @unique
+    nama       String
+    alamat     String
+    no_telp    String
+    email      String
+    user_id    String   @unique
+    user       User     @relation(fields: [user_id], references: [id])
+    mahasiswa Mahasiswa[]
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+}
+
+model IRS {
+    id          Int      @id @default(autoincrement())
+    mahasiswa_id String
+    mahasiswa    Mahasiswa @relation(fields: [mahasiswa_id], references: [nim])
+    semester   Int
+    jumlah_sks Int
+    berkas_irs String
+    isVerified Boolean
+    nilai        Float
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
 }
 
 // model Role {
