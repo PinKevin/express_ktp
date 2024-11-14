@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+    Dosen
+    Mahasiswa
+    Program_Studi
+    Fakultas
+}
+
+enum Jalur_Masuk {
+    SNMPTN
+    SBMPTN
+    Mandiri
+}
+
+enum Status {
+    Aktif
+    Tidak_Aktif
+    Cuti
+    Lulus
+}
+
+model User {
+    id        String   @id @default(cuid())
+    username  String   @unique
+    password  String
+    role      Role
+    mahasiswa Mahasiswa?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Mahasiswa {
+    nim        String   @id @default(cuid())
+    nama       String
+    alamat     String
+    no_telp    String
+    email      String
+    jalur_masuk Jalur_Masuk
+    status     Status
+    sks_kumulatif Int
+    ipk_kumulatif Float
+    semester Int
+    user_id    String   @unique
+    user       User     @relation(fields: [user_id], references: [id])
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+}
+
+// model Role {
+//   id            Int   @id @default(autoincrement())
+//   nama_role     String
+//   createdAt     DateTime @default(now())
+//   updatedAt     DateTime @updatedAt
+//   users        User[]
+// }
