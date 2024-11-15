@@ -26,6 +26,51 @@ const IRSController = {
       return res.status(500).json({ message: error.message });
     }
   },
+  getIRS: async (req, res) => {
+    try {
+      const mahasiswa_id = req.decodedToken.username;
+
+      const data = await IRS.getIrsByMahasiswaID(mahasiswa_id);
+
+      return res.status(200).json(data);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+  getIRSMahaiswaPerwalian: async (req, res) => {
+    try {
+      const dosen_id = req.decodedToken.username;
+
+      const data = await IRS.getIrsMahaiswaPerwalian(dosen_id);
+
+      return res.status(200).json(data);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+  verifyIRS: async (req, res) => {
+    try {
+      const irs_id = req.params.id;
+
+      const response = await IRS.verifyIRS(irs_id);
+
+      return res.status(200).json(response);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+
+  verifyBulkIRS: async (req, res) => {
+    try {
+      const { irs_ids } = req.body;
+
+      const responses = await IRS.verifyBulkIRS(irs_ids);
+
+      return res.status(200).json(responses);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
 };
 
 module.exports = IRSController;
