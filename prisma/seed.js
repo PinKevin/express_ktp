@@ -13,7 +13,7 @@ async function seeder() {
         role: "Dosen",
       },
       {
-        username: "	198203092006041002",
+        username: "198203092006041002",
         password: hashedPassword,
         role: "Dosen",
       },
@@ -41,13 +41,13 @@ async function seeder() {
         ).id,
       },
       {
-        nip: "	198203092006041002",
+        nip: "198203092006041002",
         nama: "Dr.Eng. Adi Wibowo, S.Si., M.Kom.",
         alamat: "Tembalang",
         no_telp: "081234567893",
-        email: "dosen2@email.com",
+        email: "adiwibowo@lecturer.undip.ac.id",
         user_id: createdDosenUsers.find(
-          (user) => user.username === "	198203092006041002"
+          (user) => user.username === "198203092006041002"
         ).id,
       },
     ];
@@ -100,7 +100,7 @@ async function seeder() {
         email: "hafizattariq@email.com",
         jalur_masuk: "SBMPTN",
         status: "Aktif",
-        dosenId: "	198203092006041002",
+        dosenId: "198203092006041002",
         user_id: createdMahasiswaUsers.find(
           (user) => user.username === "24060121140174"
         ).id,

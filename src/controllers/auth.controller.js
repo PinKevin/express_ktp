@@ -74,34 +74,6 @@ const AuthController = {
       res.status(500).json({ message: error.message });
     }
   },
-
-//   fetchData: async (req, res) => {
-//     try {
-//       const token = req.headers.authorization;
-//       const decodedToken = jwt.verify(
-//         token.split(" ")[1],
-//         process.env.SECRET_KEY
-//       );
-
-//       if (!decodedToken || !decodedToken.no_karyawan) {
-//         return res.status(401).json({ error: "Unauthorized - Invalid Token" });
-//       }
-
-//       const user = await User.getByNoKaryawan(decodedToken.no_karyawan);
-//       const response = {
-//         no_karyawan: user[0].no_karyawan,
-//         nama: user[0].nama,
-//         email: user[0].email,
-//         divisiId: user[0].divisiId,
-//         divisi: user[0].nama_divisi,
-//         roleId: user[0].roleId,
-//       };
-
-//       res.status(200).json(response);
-//     } catch (error) {
-//       res.status(500).json({ message: error.message });
-//     }
-//   },
 };
 
 module.exports = AuthController;
