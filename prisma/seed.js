@@ -8,12 +8,12 @@ async function seeder() {
 
     const dosenUserData = [
       {
-        username: "9876543210",
+        username: "199112092024061001",
         password: hashedPassword,
         role: "Dosen",
       },
       {
-        username: "9876543211",
+        username: "	198203092006041002",
         password: hashedPassword,
         role: "Dosen",
       },
@@ -31,23 +31,23 @@ async function seeder() {
 
     const dosenData = [
       {
-        nip: "9876543210",
-        nama: "Dosen Satu",
-        alamat: "Alamat Dosen Satu",
+        nip: "199112092024061001",
+        nama: "Adhe Setya Pramayoga, M.T.",
+        alamat: "Tembalang",
         no_telp: "081234567892",
-        email: "dosen1@email.com",
+        email: "adhesetya@lecturer.undip.ac.id",
         user_id: createdDosenUsers.find(
-          (user) => user.username === "9876543210"
+          (user) => user.username === "199112092024061001"
         ).id,
       },
       {
-        nip: "9876543211",
-        nama: "Dosen Dua",
-        alamat: "Alamat Dosen Dua",
+        nip: "	198203092006041002",
+        nama: "Dr.Eng. Adi Wibowo, S.Si., M.Kom.",
+        alamat: "Tembalang",
         no_telp: "081234567893",
         email: "dosen2@email.com",
         user_id: createdDosenUsers.find(
-          (user) => user.username === "9876543211"
+          (user) => user.username === "	198203092006041002"
         ).id,
       },
     ];
@@ -57,12 +57,12 @@ async function seeder() {
 
     const mahasiswaUserData = [
       {
-        username: "1234567890",
+        username: "24060121140166",
         password: hashedPassword,
         role: "Mahasiswa",
       },
       {
-        username: "1234567891",
+        username: "24060121140174",
         password: hashedPassword,
         role: "Mahasiswa",
       },
@@ -80,29 +80,29 @@ async function seeder() {
 
     const mahasiswaData = [
       {
-        nim: "1234567890",
-        nama: "Mahasiswa Satu",
-        alamat: "Alamat Satu",
+        nim: "24060121140166",
+        nama: "Erlan Irhab Ghalib",
+        alamat: "Kuningan",
         no_telp: "081234567890",
-        email: "mahasiswa1@email.com",
+        email: "erlanirhab@gmail.com",
         jalur_masuk: "SNMPTN",
         status: "Aktif",
-        dosenId: "9876543210",
+        dosenId: "199112092024061001",
         user_id: createdMahasiswaUsers.find(
-          (user) => user.username === "1234567890"
+          (user) => user.username === "24060121140166"
         ).id,
       },
       {
-        nim: "1234567891",
-        nama: "Mahasiswa Dua",
-        alamat: "Alamat Dua",
+        nim: "24060121140174",
+        nama: "M Hafiz Attariq",
+        alamat: "Medan",
         no_telp: "081234567891",
-        email: "mahasiswa2@email.com",
+        email: "hafizattariq@email.com",
         jalur_masuk: "SBMPTN",
         status: "Aktif",
-        dosenId: "9876543211",
+        dosenId: "	198203092006041002",
         user_id: createdMahasiswaUsers.find(
-          (user) => user.username === "1234567891"
+          (user) => user.username === "24060121140174"
         ).id,
       },
     ];
