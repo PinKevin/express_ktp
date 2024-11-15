@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const routes = require("./src/routes/index.routes");
+const dosenRoutes = require("./src/routes/dosen.routes");
 const cors = require("cors");
 require("dotenv").config();
 const session = require("express-session");
@@ -38,3 +39,6 @@ app.use("/api", routes);
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+// Dosen
+app.use("/api/dosen", dosenRoutes);

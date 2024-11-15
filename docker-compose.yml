@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Service untuk aplikasi Node.js
+  app:
+    build: .
+    container_name: express_ktp_app
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:admin123@34.128.111.131:5432/express-ktp?schema=public
+      - SECRET_KEY=ktpsecretkey12345
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  # Service untuk PostgreSQL
+  db:
+    image: postgres:latest
+    container_name: db_express_ktp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: express-ktp
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
