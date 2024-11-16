@@ -1,6 +1,3 @@
-Here's the updated version of the `README.md` with the **Team Members** section in a table format and additional styling to make it even more engaging:
-
-```markdown
 # 📚 Academic Information System for Informatics Students - Universitas Diponegoro
 
 Welcome to the **Academic Information System (SIA) Undip** project for the **Komputasi Tersebar dan Paralel**. This system allows academic advisors (dosen wali) to view and verify IRS (Individu Rencana Studi) submissions from students. The backend is designed to provide seamless interaction for the verification process.
