@@ -3,7 +3,7 @@ const path = require("path");
 const IRS = require("../models/IRS");
 
 const app = express();
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 const IRSController = {
   createIRS: async (req, res) => {
@@ -48,10 +48,13 @@ const IRSController = {
 
       const data = await IRS.getIrsMahaiswaPerwalian(dosen_id);
 
-      const result = data.map(irs => {
+      const result = data.map((irs) => {
+        const fileUrl = irs.berkas_irs
+          ? `${process.env.BASE_URL}/api/symlink/file/${irs.berkas_irs}`
+          : null;
         return {
-          ...irs, 
-          fileUrl: `/public/uploads/irs/${irs.berkas_irs}` 
+          ...irs,
+          file_link: fileUrl,
         };
       });
 
