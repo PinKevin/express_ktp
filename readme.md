@@ -64,7 +64,7 @@ The system enables academic advisors to:
 
 Here’s the amazing team behind the development of this system:
 
-| 🧑‍💻 **Name**                      | 🎓 **Student ID**        | 🛠️ **Role**                |
+| 🧑‍💻 **Name**                      | 🎓 **NIM**        | 🛠️ **Role**                |
 |-----------------------------------|--------------------------|----------------------------|
 | **Emerio Kevin Aryaputra**        | 24060121120012           | Backend Engineer           |
 | **Erlan Irhab Ghalib**            | 24060121140166           | Backend Engineer           |
