@@ -66,9 +66,9 @@ Here’s the amazing team behind the development of this system:
 
 | 🧑‍💻 **Name**                      | 🎓 **NIM**        | 🛠️ **Role**                |
 |-----------------------------------|--------------------------|----------------------------|
-| **Emerio Kevin Aryaputra**        | 24060121120012           | Backend Engineer           |
-| **Erlan Irhab Ghalib**            | 24060121140166           | Backend Engineer           |
-| **Fadhail Athaillah Bima**       | 24060121140172           | Backend Engineer           |
+| **Emerio Kevin Aryaputra**        | 24060121120012           | Backend Developer           |
+| **Erlan Irhab Ghalib**            | 24060121140166           | Backend Developer           |
+| **Fadhail Athaillah Bima**       | 24060121140172           | Backend Developer           |
 | **M. Hafiz Attariq**             | 24060121140174           | Frontend Developer         |
 | **Varrel**                        | 24060121130062           | Frontend Developer         |
 
