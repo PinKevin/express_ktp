@@ -1,85 +1,86 @@
-Here is an updated `README.md` file incorporating the API endpoints you've provided:
+Sure! Here's an updated version of the `README.md` file with a more engaging layout, including a table for backend technologies and some emojis to make it more visually appealing:
 
 ```markdown
-# Academic Information System for Informatics Students - Universitas Diponegoro
+# 📚 Academic Information System for Informatics Students - Universitas Diponegoro
 
-This project is an Academic Information System (SIA) for the Informatics Department at Universitas Diponegoro. The main focus of the project is to develop the **backend for IRS (Individu Rencana Studi)** verification by academic advisors (dosen wali). This system allows academic advisors to view and verify the IRS requests submitted by students.
+Welcome to the **Academic Information System (SIA)** project for the **Informatics Department** at **Universitas Diponegoro**. This system allows academic advisors (dosen wali) to view and verify IRS (Individu Rencana Studi) submissions from students. The backend is designed to provide seamless interaction for the verification process.
 
-## Project Overview
+## 🚀 Project Overview
 
-The system provides an API for academic advisors to:
-
+The system enables academic advisors to:
 - View all IRS submissions from students under their supervision.
-- Verify the IRS requests by either accepting or rejecting them.
+- Verify IRS requests by either accepting or rejecting them.
 
-The backend for this system is built using:
+### 🛠 Backend Technology Stack
 
-- **Express.js**: For creating RESTful API routes.
-- **Prisma ORM**: For database interactions with PostgreSQL.
-- **PostgreSQL (CloudSQL v17)**: As the database used for storing IRS data.
-- **Docker**: To containerize the backend application for easier deployment.
-- **NGINX**: Used for load balancing in a production environment.
-- **Google Cloud Platform (GCP)**: For deploying the system with Virtual Machine instances in the Asia-Jakarta region.
-- **Postman**: For API testing.
+| Technology               | Description                                                                                           |
+|--------------------------|-------------------------------------------------------------------------------------------------------|
+| **Express.js**            | Framework for building RESTful APIs.                                                                  |
+| **Prisma ORM**            | An ORM used for database interaction with PostgreSQL.                                                 |
+| **PostgreSQL v17**        | CloudSQL PostgreSQL for storing IRS data on Google Cloud.                                             |
+| **Docker**                | Containerization of the backend application for efficient deployment.                                |
+| **NGINX**                 | Load balancing to ensure high availability and scalability.                                          |
+| **Google Cloud Platform** | Hosting on Google Cloud VM instances (Asia-Jakarta region) for deployment.                           |
+| **Postman**               | API testing tool for validating the functionality of the backend.                                     |
 
-## Features
+## 🌟 Features
 
-- **IRS Verification**: Dosen Wali (Academic Advisor) can view and verify the IRS submissions of students.
-- **Express.js API**: The backend exposes API endpoints to interact with the system.
-- **Cloud Database**: The system uses Google Cloud's CloudSQL PostgreSQL for persistent data storage.
-- **Containerized Deployment**: The system is containerized with Docker for efficient deployment and scaling.
-- **Load Balancing**: Using NGINX for distributing requests to ensure high availability and reliability.
-- **API Testing with Postman**: Postman is used to test and validate the API functionality.
+- **IRS Verification**: Academic advisors (dosen wali) can view and verify the IRS submissions of students.
+- **RESTful API**: Exposes API endpoints to interact with the system using Express.js.
+- **Cloud Database**: Uses Google Cloud's CloudSQL with PostgreSQL for persistent data storage.
+- **Dockerized Deployment**: The backend is containerized for easy deployment and scaling.
+- **Load Balancing**: Powered by NGINX to handle traffic and ensure the system remains available.
+- **Postman API Testing**: Postman is used to test and validate the backend APIs.
 
-## API Endpoints
+## 💻 API Endpoints
 
-### Authentication
+### 🔐 Authentication
 
 - **POST /api/auth/login**  
   Login for both mahasiswa and dosen. Accepts credentials and returns an authentication token.
 
-### Mahasiswa
+### 👨‍🎓 Mahasiswa (Student)
 
 - **GET /api/mahasiswa**  
-  Check login status for mahasiswa.
+  Check the login status of mahasiswa.
 
-### Dosen
+### 👩‍🏫 Dosen (Academic Advisor)
 
 - **GET /api/dosen**  
-  Check login status for dosen (academic advisor).
+  Check the login status of dosen (academic advisor).
 
-### IRS (Individu Rencana Studi)
+### 📄 IRS (Individu Rencana Studi)
 
 - **POST /api/irs/upload**  
   Upload IRS data for a mahasiswa. Requires authentication.
-  
+
 - **GET /api/irs**  
-  Fetch IRS submissions for all mahasiswa.
+  Fetch all IRS submissions from students.
 
 - **GET /api/irs/mahasiswa**  
-  Fetch IRS submissions for a specific mahasiswa based on their academic advisor.
+  Fetch IRS submissions for a specific mahasiswa under an academic advisor.
 
 - **PUT /api/irs/verify-bulk**  
-  Verify IRS submissions for multiple mahasiswa.
+  Verify IRS submissions for multiple mahasiswa at once.
 
-## Team Members
+## 👥 Team Members
 
-- **Backend Engineer**:  
+- **Backend Engineers**:
   - Emerio Kevin Aryaputra - 24060121120012
   - Erlan Irhab Ghalib - 24060121140166
   - Fadhail Athaillah Bima - 24060121140172
 
-## Technologies Used
+## ⚙️ Technologies Used
 
-- **Node.js** with **Express.js**
-- **Prisma ORM**
-- **PostgreSQL v17 (CloudSQL on GCP)**
-- **Docker**
-- **NGINX** (for load balancing)
-- **Google Cloud Platform (GCP)** - VM instances (Asia-Jakarta region)
-- **Postman** for API testing
+- **Node.js** with **Express.js**: Backend framework and API creation.
+- **Prisma ORM**: For smooth interaction with the PostgreSQL database.
+- **PostgreSQL v17 (CloudSQL)**: Cloud database hosted on Google Cloud.
+- **Docker**: Containerizing the backend application.
+- **NGINX**: For efficient load balancing in production.
+- **Google Cloud Platform (GCP)**: Virtual Machine instances deployed in the Asia-Jakarta region.
+- **Postman**: For testing and validating the API endpoints.
 
-## Setup Instructions
+## 🛠️ Setup Instructions
 
 ### Prerequisites
 
@@ -87,29 +88,32 @@ The backend for this system is built using:
 - Google Cloud Platform account (for deployment)
 - Postman (for API testing)
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/project-repository.git
 cd project-repository
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Set up the environment variables
+### 3. Set Up Environment Variables
 
 Create a `.env` file in the root directory and configure the following:
 
 ```
+NODE_ENV=development
 DATABASE_URL=your_database_connection_url
 PORT=3000
+
+SECRET_KEY=ktpsecretkey12345
 ```
 
-### 4. Run the application locally
+### 4. Run the Application Locally
 
 ```bash
 npm start
@@ -136,13 +140,15 @@ This will create and run a Docker container with the application.
 
 For deployment, ensure you have Docker images and NGINX configured for load balancing. The deployment is done through Google Cloud VM instances in the Asia-Jakarta region.
 
-## License
+## 📑 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ```
 
 ### Key Changes:
-- Added your API endpoints in the **API Endpoints** section.
-- Described the functionality of each endpoint to make it clear for users on how to use the system.
+- **Table for Technology Stack**: I added a table with the technologies used in the project.
+- **Emojis**: Used emojis like 🚀, 🌟, and 💻 to add visual appeal and make the README more engaging.
+- **Project Structure**: The structure is organized with bold section headers and clear formatting.
 
-Feel free to copy this content into your `README.md` file in your GitHub project!
+You can copy this `README.md` into your GitHub repository for a more attractive and organized project presentation!
