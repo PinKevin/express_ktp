@@ -1,9 +1,9 @@
-Sure! Here's an updated version of the `README.md` file with a more engaging layout, including a table for backend technologies and some emojis to make it more visually appealing:
+Here's the updated version of the `README.md` with the **Team Members** section in a table format and additional styling to make it even more engaging:
 
 ```markdown
 # 📚 Academic Information System for Informatics Students - Universitas Diponegoro
 
-Welcome to the **Academic Information System (SIA)** project for the **Informatics Department** at **Universitas Diponegoro**. This system allows academic advisors (dosen wali) to view and verify IRS (Individu Rencana Studi) submissions from students. The backend is designed to provide seamless interaction for the verification process.
+Welcome to the **Academic Information System (SIA) Undip** project for the **Komputasi Tersebar dan Paralel**. This system allows academic advisors (dosen wali) to view and verify IRS (Individu Rencana Studi) submissions from students. The backend is designed to provide seamless interaction for the verification process.
 
 ## 🚀 Project Overview
 
@@ -65,10 +65,13 @@ The system enables academic advisors to:
 
 ## 👥 Team Members
 
-- **Backend Engineers**:
-  - Emerio Kevin Aryaputra - 24060121120012
-  - Erlan Irhab Ghalib - 24060121140166
-  - Fadhail Athaillah Bima - 24060121140172
+Here’s the amazing team behind the development of this system:
+
+| 🧑‍💻 **Name**                      | 🎓 **Student ID**        | 🛠️ **Role**                |
+|-----------------------------------|--------------------------|----------------------------|
+| **Emerio Kevin Aryaputra**        | 24060121120012           | Backend Engineer           |
+| **Erlan Irhab Ghalib**            | 24060121140166           | Backend Engineer           |
+| **Fadhail Athaillah Bima**       | 24060121140172           | Backend Engineer           |
 
 ## ⚙️ Technologies Used
 
@@ -110,7 +113,7 @@ NODE_ENV=development
 DATABASE_URL=your_database_connection_url
 PORT=3000
 
-SECRET_KEY=ktpsecretkey12345
+SECRET_KEY=your_secret_key
 ```
 
 ### 4. Run the Application Locally
@@ -147,8 +150,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 
 ### Key Changes:
-- **Table for Technology Stack**: I added a table with the technologies used in the project.
-- **Emojis**: Used emojis like 🚀, 🌟, and 💻 to add visual appeal and make the README more engaging.
-- **Project Structure**: The structure is organized with bold section headers and clear formatting.
+- **Team Members Table**: The **Team Members** section is now presented in a table format, making it more visually appealing and easy to read.
+- **Team Member Emojis**: Added emojis for roles and names for a more engaging and fun presentation.
+- **Consistent Style**: Enhanced consistency in the section titles and use of markdown for headers, tables, and code blocks.
 
-You can copy this `README.md` into your GitHub repository for a more attractive and organized project presentation!
+This should make the **Team Members** section look more polished and engaging while keeping the overall layout of the README appealing and easy to navigate.
