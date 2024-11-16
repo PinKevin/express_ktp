@@ -69,6 +69,9 @@ Here’s the amazing team behind the development of this system:
 | **Emerio Kevin Aryaputra**        | 24060121120012           | Backend Engineer           |
 | **Erlan Irhab Ghalib**            | 24060121140166           | Backend Engineer           |
 | **Fadhail Athaillah Bima**       | 24060121140172           | Backend Engineer           |
+| **M. Hafiz Attariq**             | 24060121140174           | Frontend Developer         |
+| **Varrel**                        | 24060121130062           | Frontend Developer         |
+
 
 ## ⚙️ Technologies Used
 
