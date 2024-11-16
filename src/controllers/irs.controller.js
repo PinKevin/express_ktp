@@ -1,4 +1,9 @@
+const express = require("express");
+const path = require("path");
 const IRS = require("../models/IRS");
+
+const app = express();
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 const IRSController = {
   createIRS: async (req, res) => {
@@ -43,7 +48,14 @@ const IRSController = {
 
       const data = await IRS.getIrsMahaiswaPerwalian(dosen_id);
 
-      return res.status(200).json(data);
+      const result = data.map(irs => {
+        return {
+          ...irs, 
+          fileUrl: `/public/uploads/irs/${irs.berkas_irs}` 
+        };
+      });
+
+      return res.status(200).json(result);
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }

@@ -23,7 +23,6 @@ const IRS = {
           mahasiswa_id: mahasiswa_id,
         },
       });
-
       return response;
     } catch (error) {
       throw new Error(error.message);

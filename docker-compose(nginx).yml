@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # Service untuk aplikasi Node.js pertama
+  app1:
+    build: .
+    container_name: express_ktp_app1
+    ports:
+      - "3001:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:admin123@34.128.111.131:5432/express-ktp?schema=public
+      - SECRET_KEY=ktpsecretkey12345
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  # Service untuk aplikasi Node.js kedua
+  app2:
+    build: .
+    container_name: express_ktp_app2
+    ports:
+      - "3002:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:admin123@34.128.111.131:5432/express-ktp?schema=public
+      - SECRET_KEY=ktpsecretkey12345
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  # Service untuk aplikasi Node.js ketiga
+  app3:
+    build: .
+    container_name: express_ktp_app3
+    ports:
+      - "3003:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:admin123@34.128.111.131:5432/express-ktp?schema=public
+      - SECRET_KEY=ktpsecretkey12345
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  # Service untuk PostgreSQL
+  db:
+    image: postgres:latest
+    container_name: db_express_ktp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: express-ktp
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Service untuk Nginx Load Balancer
+  nginx:
+    image: nginx:latest
+    container_name: nginx_load_balancer
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app1
+      - app2
+      - app3
+
+volumes:
+  postgres_data:
