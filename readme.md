@@ -143,10 +143,3 @@ For deployment, ensure you have Docker images and NGINX configured for load bala
 ## 📑 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Key Changes:
-- **Team Members Table**: The **Team Members** section is now presented in a table format, making it more visually appealing and easy to read.
-- **Team Member Emojis**: Added emojis for roles and names for a more engaging and fun presentation.
-- **Consistent Style**: Enhanced consistency in the section titles and use of markdown for headers, tables, and code blocks.
-
-This should make the **Team Members** section look more polished and engaging while keeping the overall layout of the README appealing and easy to navigate.
