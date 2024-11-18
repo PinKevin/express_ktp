@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+RUN apk add --no-cache openssl3
 
 # Menyalin semua file proyek ke dalam container
 COPY . .
