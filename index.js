@@ -36,6 +36,15 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use("/api", routes);
 
+app.use((req, res, next) => {
+  const upstreamIp = req.headers['x-upstream-ip'];
+  if (upstreamIp) {
+    res.setHeader('X-Upstream-IP', upstreamIp);
+  }
+  next();
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
