@@ -1,17 +1,18 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const bodyParser = require("body-parser");
-const routes = require("./src/routes/index.routes");
-const cors = require("cors");
-require("dotenv").config();
-const session = require("express-session");
-const liveReload = require("connect-livereload");
-const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser');
+const routes = require('./src/routes/index.routes');
+const cors = require('cors');
+require('dotenv').config();
+const session = require('express-session');
+const liveReload = require('connect-livereload');
+const cookieParser = require('cookie-parser');
 
 const port = process.env.PORT || 8080;
 
 const corsOptions = {
-  origin: process.env.WEB_URL || "http://localhost:3000",
+  // origin: process.env.WEB_URL || 'http://localhost:3000' || 'http://localhost:3001',
+  origin: '*',
   httpOnly: false,
 };
 
@@ -22,19 +23,19 @@ app.use(cookieParser());
 
 app.use(
   session({
-    secret: process.env.SECRET_KEY || "defaultSecretKey", 
+    secret: process.env.SECRET_KEY || 'defaultSecretKey',
     resave: true,
     saveUninitialized: true,
     cookie: {
-      sameSite: "strict",
+      sameSite: 'strict',
     },
-  })
+  }),
 );
 if (process.env.NODE_ENV === 'development') {
   app.use(liveReload());
 }
 
-app.use("/api", routes);
+app.use('/api', routes);
 
 app.use((req, res, next) => {
   const upstreamIp = req.headers['x-upstream-ip'];
@@ -43,7 +44,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
